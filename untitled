@@ -1,0 +1,87 @@
+Jupyter Notebook
+read_txt2.py
+an hour ago
+Python
+File
+Edit
+View
+Language
+
+1
+import pylab
+2
+import numpy
+3
+​
+4
+def loadData(filename):
+5
+    data = open(filename, 'r')
+6
+​
+7
+    X1 = []
+8
+    X2 = []
+9
+    X3 = []
+10
+    X4 = []
+11
+    X5 = []
+12
+​
+13
+    for line in data:
+14
+        line = line.strip('\n\r')
+15
+        input_data = line.split(',')
+16
+​
+17
+        X1.append(input_data[1])
+18
+        X2.append(input_data[3])
+19
+        X5.append(input_data[4])
+20
+​
+21
+​
+22
+        figue = pylab.figure('X2_X4')
+23
+        ax = figue.add_subplot(111)
+24
+        # pylab.plot(X,Y,'rx')
+25
+        pylab.xlabel('X2')
+26
+        pylab.ylabel('X4')
+27
+​
+28
+        if input_data[4] == str(0):
+29
+            ax.scatter(input_data[1], input_data[3], c='r', marker='o')
+30
+        else:
+31
+            ax.scatter(input_data[1], input_data[3], c='g', marker='x')
+32
+​
+33
+​
+34
+    pylab.show()
+35
+​
+36
+loadData('1.txt')
+37
+​
+38
+​
+39
+​
